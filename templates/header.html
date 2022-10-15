@@ -1,0 +1,47 @@
+{% load static %}
+
+
+<body class="slider-collapse">
+		
+		<div id="site-content">
+			
+			<header class="site-header wow fadeInDown">
+				<div class="container">
+					<div class="header-content">
+						<div class="branding">
+							<img src="{% static 'images/logo.png' %}" alt="Company Name" class="logo">
+							<h1 class="site-title"><a href="{% url 'travelapps:landing-page' %}">Tour and Travel Management System</a></h1>
+						</div>
+						
+						<nav class="main-navigation">
+							<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+							<ul class="menu">
+
+								{% url 'travelapps:about-us' as url %}
+									<li class="menu-item {% if request.path == url %}current-menu-item{% endif %}">
+									<a href="{% url 'travelapps:about-us' %}">About us</a></li>
+
+								{% url 'travelapps:our-offer' as url %}
+									<li class="menu-item {% if request.path == url %}current-menu-item{% endif %}">
+									<a href="{% url 'travelapps:our-offer' %}">Our Offer</a></li>
+								
+								{% url 'travelapps:customer-protection' as url %}
+									<li class="menu-item {% if request.path == url %}current-menu-item{% endif %}">
+									<a href="{% url 'travelapps:customer-protection' %}">Customer Protection</a></li>
+
+								{% url 'travelapps:contact' as url %}
+									<li class="menu-item {% if request.path == url %}current-menu-item{% endif %}">
+									<a href="{% url 'travelapps:contact' %}">Contact</a></li>
+							</ul>
+						</nav>
+						
+						<div class="social-links">
+							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+							<a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+							<a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+
+			</header> <!-- .site-header -->

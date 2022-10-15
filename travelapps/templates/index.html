@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titlename %}
+<title>
+	Home Travel
+</title>
+{% endblock titlename %}
+
+{% block content %}
+<main class="content">
+	<div class="slider">
+		<ul class="slides">
+			<li data-background="{% static 'dummy/3604567.jpg' %}">
+				<div class="container">
+					<div class="slide-caption col-md-4">
+						<h2 class="slide-title">Hundreds of Amazing Destinations</h2>
+						<p>We offer a variety of destinations to travel to, ranging from exotic to some extreme ones.
+							They include very popular countries and cities like Paris, Rio de Janeiro, Cairo and a lot
+							of others.</p>
+					</div>
+				</div>
+			</li>
+			<li data-background="{% static 'dummy/865178.jpg' %}">
+				<div class="container">
+					<div class="slide-caption col-md-4">
+						<h2 class="slide-title">The Trip of Your Dream</h2>
+						<p>Our travel agency is ready to offer you an exciting vacation that is designed to fit your own
+							needs and wishes. Whether it’s an exotic cruise or a trip to your favorite resort, you will
+							surely have the best experience.</p>
+					</div>
+				</div>
+			</li>
+			<li data-background="{% static 'dummy/mountains.jpg' %}">
+				<div class="container">
+					<div class="slide-caption col-md-4">
+						<h2 class="slide-title">unique Travel Insights</h2>
+						<p>Our team is ready to provide you with unique weekly travel insights that include photos,
+							videos, and articles about untravelled tourist paths. We know everything about the places
+							you’ve never been to!</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="flexslider-controls">
+			<div class="container">
+				<ol class="flex-control-nav">
+					<li><a>1</a></li>
+					<li><a>2</a></li>
+					<li><a>3</a></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="fullwidth-block offers-section" data-bg-color="#f1f1f1">
+		<div class="container">
+			<h2 class="section-title">The newest holiday offers</h2>
+			<div class="row">
+				{% for new in city %}
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<article class="offer wow bounceIn">
+						<figure class="featured-image"><img src="{{new.img.url}}" alt=""></figure>
+						<h2 class="entry-title"><a href="">{{ new.title }}</a></h2>
+						<p>Piditate non provident similique sunt in culpa qui oficia deserunt molitia animi est aborum
+							et dolorum fuga</p>
+						<div class="price">
+							<strong>{{ new.price }}$</strong>
+							<small>/10 days</small>
+						</div>
+						<a href="{% url 'book-tour' %}" class="button">Book Tour</a>
+					</article>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="fullwidth-block testimonial-section">
+		<div class="container">
+			<h2 class="section-title">Testimonials</h2>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="testimonial wow fadeInUp">
+						<figure class="avatar"><img src="{% static 'dummy/12.jpg' %}" alt=""></figure>
+						<blockquote class="testimonial-body">
+							<p>I wanted to thank you very much for planning the trip to France for my boyfriend and me.
+								It was amazing and exceeded my expectations! We had a wonderful time and were very
+								pleased with the accommodations in Paris and Bayeux. Our private/small tour guides were
+								fantastic! I appreciate all the effort to get us to the Eiffel Tower finally. </p>
+							<cite>Jessica Tracy</cite>
+							<span>Creative agency CEO</span>
+						</blockquote>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="testimonial wow fadeInUp" data-wow-delay=".2s">
+						<figure class="avatar"><img src="{% static 'dummy/13.jpg' %}" alt=""></figure>
+						<blockquote class="testimonial-body">
+							<p>I had a marvelous time in our travels to Madagascar, Zimbabwe and Botswana, I had just
+								wonderful experiences.I loved the location of the Gorges Camp as I felt like it was only
+								the time we got to see real and rural Africans and how they truly lived. The service was
+								amazing and everyone was very attentive!</p> <cite>John Smith</cite>
+							<span>Traveler</span>
+						</blockquote>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="testimonial wow fadeInUp" data-wow-delay=".4s">
+						<figure class="avatar"><img src="{% static 'dummy/1.jpg' %}" alt=""></figure>
+						<blockquote class="testimonial-body">
+							<p>Just wanted to say many, many thanks for helping me set up an amazing Costa Rican
+								adventure! My nephew and I had a blast! All of the accommodations were perfect as were
+								the activities that we did (canopy, coffee tour, hikes, fishing, and massages!) We have
+								such fond memories and can't thank you enough!</p>
+							<cite>Susan Webb</cite>
+							<span>Hairdresser</span>
+						</blockquote>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="testimonial wow fadeInUp" data-wow-delay=".6s">
+						<figure class="avatar"><img src="{% static 'dummy/4.jfif' %}" alt=""></figure>
+						<blockquote class="testimonial-body">
+							<p>Just wanted to say many, many thanks for helping me set up an amazing Costa Rican
+								adventure! My nephew and I had a blast! All of the accommodations were perfect as were
+								the activities that we did (canopy, coffee tour, hikes, fishing, and massages!) We have
+								such fond memories and can't thank you enough!</p>
+							<cite>Sarah Brown</cite>
+							<span>Athlete</span>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main> <!-- .content -->
+
+{% endblock content %}
